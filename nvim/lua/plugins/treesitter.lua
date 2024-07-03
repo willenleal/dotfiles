@@ -2,11 +2,12 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     opts = {
-        autotag = {enable = true},
+        autotag = { enable = true },
         -- A list of parser names, or "all" (the five listed parsers should always be installed)
         ensure_installed = {
             "lua", "vim", "javascript", "typescript", "tsx", "css", "json",
-            "yaml", "php", "html", "toml", "rust", "c", "query", "sql", "python"
+            "yaml", "php", "html", "toml", "rust", "c", "query", "sql", "python",
+            "regex"
         },
 
         -- Install parsers synchronously (only applied to `ensure_installed`)
@@ -27,4 +28,3 @@ return {
         }
     }
 }
-
