@@ -19,7 +19,7 @@ vim.keymap.set("n", "N", "Nzzzv")
 
 -- past over keep pasted over
 vim.keymap.set("x", "<leader>p", [["_dP]])
-vim.keymap.set('n', 'x', '"_x')
+vim.keymap.set("n", "x", '"_x')
 
 -- next greatest remap ever : asbjornHaland
 vim.keymap.set({ "n", "v" }, "<leader>y", [["+y]])
@@ -40,15 +40,14 @@ vim.keymap.set("n", "<leader>j", "<cmd>lprev<CR>zz")
 vim.keymap.set("n", "<leader>s", [[:%s/\<<C-r><C-w>\>/<C-r><C-w>/gI<Left><Left><Left>]])
 vim.keymap.set("n", "<leader>x", "<cmd>!chmod +x %<CR>", { silent = true })
 
-vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/core/lazy.lua<CR>");
+vim.keymap.set("n", "<leader>vpp", "<cmd>e ~/.config/nvim/lua/core/lazy.lua<CR>")
 
 vim.keymap.set("n", "<leader><leader>", function()
-    vim.cmd("so")
+	vim.cmd("so")
 end)
 
--- window
-vim.keymap.set('n', '<leader>w', '<C-w>w')
+vim.keymap.set("n", "<leader>q", "<cmd>q<cr>")
+vim.keymap.set("n", "<leader>w", "<cmd>w<cr>")
 
--- noice 
-vim.keymap.set('n', '<leader>nd', '<CMD>NoiceDismiss<CR>')
-
+-- noice
+vim.keymap.set("n", "<leader>nd", "<CMD>NoiceDismiss<CR>")
