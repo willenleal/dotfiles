@@ -55,10 +55,10 @@ return {
 		require("mason").setup({
 			opts = {
 				ensure_installed = {
+					"prettierd",
 					"mypy",
 					"ruff",
 					"black",
-					"prettierd",
 					"yamlfix",
 					"sql_formatter",
 					"stylua",
@@ -73,6 +73,7 @@ return {
 			ensure_installed = {
 				"tsserver",
 				"rust_analyzer",
+				"gopls",
 				"pyright",
 				"eslint",
 				"kotlin_language_server",
