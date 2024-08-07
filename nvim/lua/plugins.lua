@@ -52,8 +52,13 @@ return {
 	{
 		"numToStr/Comment.nvim",
 		config = function()
-			require("Comment").setup()
+			require("Comment").setup({
+				pre_hook = require("ts_context_commentstring.integrations.comment_nvim").create_pre_hook(),
+			})
 		end,
+		dependencies = {
+			"JoosepAlviste/nvim-ts-context-commentstring",
+		},
 	},
 	{
 		"windwp/nvim-autopairs",
@@ -138,5 +143,17 @@ return {
 			end, { desc = "Format file or range (in visual mode)" })
 		end,
 	},
-	"kristijanhusak/vim-dadbod-completion",
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		config = function()
+			require("toggleterm").setup({
+				direction = "float",
+				float_opts = {
+					border = "curved",
+				},
+				open_mapping = [[<c-\>]],
+			})
+		end,
+	},
 }

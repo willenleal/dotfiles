@@ -8,9 +8,10 @@ vim.opt.softtabstop = 4
 vim.opt.shiftwidth = 4
 vim.opt.expandtab = true
 
-vim.o.foldcolumn = '1' -- '0' is not bad
+vim.o.foldcolumn = "0"
 vim.o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
 vim.o.foldlevelstart = 99
+vim.opt.foldmethod = "indent"
 vim.o.foldenable = true
 
 vim.opt.smartindent = true
@@ -37,5 +38,8 @@ vim.opt.updatetime = 50
 -- https://unix.stackexchange.com/a/383044
 vim.o.autoread = true
 vim.api.nvim_create_autocmd({
-    "BufEnter", "CursorHold", "CursorHoldI", "FocusGained"
-}, {command = "if mode() != 'c' | checktime | endif", pattern = {"*"}})
+	"BufEnter",
+	"CursorHold",
+	"CursorHoldI",
+	"FocusGained",
+}, { command = "if mode() != 'c' | checktime | endif", pattern = { "*" } })

@@ -52,6 +52,19 @@ return {
 			end, opts)
 		end)
 
+		local lsp_capabilities = vim.tbl_deep_extend("force", require("cmp_nvim_lsp").default_capabilities(), {
+			textDocument = {
+				foldingRange = {
+					dynamicRegistration = false,
+					lineFoldingOnly = true,
+				},
+			},
+		})
+
+		lsp_zero.extend_lspconfig({
+			capabilities = lsp_capabilities,
+		})
+
 		require("mason").setup({
 			opts = {
 				ensure_installed = {
