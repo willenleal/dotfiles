@@ -15,6 +15,19 @@ return {
 			styles = { comments = {}, conditionals = {} },
 		},
 		config = function()
+			require("catppuccin").setup({
+				integrations = {
+					alpha = true,
+					cmp = true,
+					gitsigns = true,
+					treesitter = true,
+					notify = false,
+					mini = {
+						enabled = true,
+						indentscope_color = "",
+					},
+				},
+			})
 			vim.cmd.colorscheme("catppuccin-mocha")
 		end,
 	},
@@ -63,6 +76,19 @@ return {
 	{
 		"windwp/nvim-autopairs",
 		opts = { disable_filetype = { "TelescopePrompt", "vim" } },
+	},
+	{
+		"windwp/nvim-ts-autotag",
+		dependencies = {
+			"nvim-treesitter/nvim-treesitter",
+		},
+		opts = {
+			opts = {
+				enable_close = true,
+				enable_rename = true,
+				enable_close_on_slash = true,
+			},
+		},
 	},
 	{
 		"mfussenegger/nvim-lint",
@@ -153,6 +179,19 @@ return {
 					border = "curved",
 				},
 				open_mapping = [[<c-\>]],
+			})
+		end,
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+		config = function()
+			require("lualine").setup({
+				options = {
+					theme = "catppuccin",
+					component_separators = { left = "|", right = "|" },
+					section_separators = { left = "", right = "" },
+				},
 			})
 		end,
 	},
